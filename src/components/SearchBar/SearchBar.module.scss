@@ -1,0 +1,79 @@
+@import "../../style.scss";
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+
+  // Deep selector to override Material UI styles within this container
+  :global {
+    .MuiFormControl-root {
+      width: 100%;
+    }
+
+    .MuiInputBase-root {
+      font-family: 'Outfit', sans-serif !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+      backdrop-filter: blur(10px);
+      border-radius: 16px !important;
+      color: white !important;
+      transition: all 0.3s ease;
+      padding-right: 14px !important;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.15) !important;
+      }
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      transition: border-color 0.3s ease;
+    }
+
+    .Mui-focused .MuiOutlinedInput-notchedOutline {
+      border-color: var(--secondary) !important;
+      border-width: 2px !important;
+    }
+
+    .MuiInputLabel-root {
+      color: rgba(255, 255, 255, 0.7) !important;
+      font-family: 'Outfit', sans-serif !important;
+
+      &.Mui-focused {
+        color: var(--secondary) !important;
+      }
+    }
+
+    // The Button
+    .MuiButton-root {
+      min-width: 56px !important;
+      height: 56px !important;
+      border-radius: 16px !important;
+      background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      &.Mui-disabled {
+        background: rgba(255, 255, 255, 0.1) !important;
+        opacity: 0.5;
+      }
+    }
+
+    // Icons
+    .MuiSvgIcon-root {
+      fill: white !important;
+    }
+  }
+}
