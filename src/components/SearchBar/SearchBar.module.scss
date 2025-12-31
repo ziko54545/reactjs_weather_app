@@ -8,6 +8,11 @@
   margin-bottom: 2.5rem;
   width: 100%;
 
+  .searchInput {
+    width: 100%;
+    flex: 1; // Ensure it takes up remaining space
+  }
+
   // Deep selector to override Material UI styles within this container
   :global {
     .MuiFormControl-root {
